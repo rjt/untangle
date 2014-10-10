@@ -7,7 +7,9 @@ a URL and unknowningly enter your credentials in the "clear"
 because the protection mechanism were bypassed.  
 Enter 
 
+```
 http://MyUntangleFirewall.com/auth/login?url=/setup/welcome.do&realm=Administrator
+```
 
 and see if you can put your username and password into the box
 and that submit will transmit them even if http administration
@@ -23,7 +25,9 @@ is turned off.
      # grep rjt /var/log/apache2/error.log
     
 6.) Verify it is working by testing the public and private URLs found here: 
+    ```
      # grep '\[crit\] rjt' /var/log/apache2/error.log | grep http 
+    ```
 
 will tell you the URL to put into a test browser to
 see if SSL / https is bypassed when prompted for
