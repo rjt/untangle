@@ -25,6 +25,7 @@ is turned off.
      # grep rjt /var/log/apache2/error.log
     
 6.) Verify it is working by testing the public and private URLs found here: 
+
     ```
      # grep '\[crit\] rjt' /var/log/apache2/error.log | grep http 
     ```
