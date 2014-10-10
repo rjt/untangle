@@ -61,6 +61,7 @@ rob.townley+untangle@gmail.com
 
 =============
 List of folders and files:
+```
 .
 ./usr
 ./usr/share
@@ -76,5 +77,6 @@ List of folders and files:
 ./findUntangleFiles.sh
 ./LICENSE
 ./README.md
+```
 
 
