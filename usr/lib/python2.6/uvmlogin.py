@@ -120,7 +120,7 @@ def is_local_process_uid_authorized(req):
     (remote_ip, remote_port) = req.connection.remote_addr
 
     if remote_ip != "127.0.0.1": 
-        apache.error_log('rjt: IPv6 has ::1 but this IS NOT CHECKED', apache.APLOG_EMERG, req.server)
+        apache.log_error('rjt: IPv6 has ::1 but this IS NOT CHECKED', apache.APLOG_EMERG, req.server)
         return False
 
     # This determines the PID of the connecting process
