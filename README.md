@@ -1,6 +1,6 @@
 untangle
 ========
-
+Has NOT been tested yet with untangle 11.0.1~svn20150105r39394release11.0-1wheezy.
 Untangle does not force SSL very well as of 2014-10-09.  
 It was too easy to bookmark 
 a URL and unknowningly enter your credentials in the "clear"
@@ -15,11 +15,19 @@ and see if you can put your username and password into the box
 and that submit will transmit them even if http administration
 is turned off.
 
+THIS NEEDS A SCRIPT TO MAKE THESE LOUSY DIRECTIONS SIMPLER.
+The gist is that you copy ./usr/share/untangle/mod_python/auth/index.py
+over the real version after making a backup.  Restart.
+How to force untangle to only SSL encrypted usernames and passwords.
 1.) Make a backup of the corresponding files on your system.
-2.) mkdir ./archive/ Move the corresponding '*.pyc' files.
-3.) copy these files to their locations on your gateway.
-4.) There will be a corresponding 
-5.) Verify it is installed by:
+2.) pushd /usr/share/untangle/mod_python/auth/
+3.) mkdir ./archive/ 
+4.) Move the corresponding '*.pyc' files to ./archive/
+      a.) mv index.py ./archive/
+5.) copy new file(s) to their locations on your gateway.
+      a.) mv ./usr/share/untangle/mod_python/auth/index.py  #This file forces https.
+6.) There will be a corresponding
+7.) Verify it is installed by:
 
      ssh root@untangle
      # grep rjt /var/log/apache2/error.log
